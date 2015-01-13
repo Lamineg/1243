@@ -360,7 +360,15 @@ sur la figure \ref{fig:flow-sheet-aspen}.
 \end{figure}
 
 \subsection{Principe du recyclage de réactifs et de la purge}
-Sur la purge je gère pas trop... Guillaume? Simon?
+La réaction de synthèse d'ammoniac se passe à l'équilibre thermodynamique. On travaille à pression constante puisque nous sommes en système ouvert. Le but du recyclage est de maximiser le rendement seulement on se rend compte que il  va y avoir une accumulation d'argon dans le réacteur si l'on renvoie à l'entrée de celuui-ci, la totalité de ce qui n'a pas réagit. Il est donc nécessaire de faire une purge, c'est-à-dire rejeter un certain coefficient de \ce{N2}, de \ce{H2} et de \ce{Ar}. Pour le calcul de la constante d'équilibre, on procède exactement de la même manière que pour le réformage primaire. 
+On avait l'expression suivante : 
+$$K(T) = \frac{4x\cdot p\std \cdot n_{g,tot}}{(2n_1 - x)^{1/2} (2n_2 - 3x)^{3/2} \cdot p_{tot}}.$$
+Il est important de comprendre que $n_1, n_2 et n_3$ représentent l'ensemble de ce qui rentre respectivement en \ce{N2, H2 et Ar}, c'est-à-dire les recyclages compris.
+Ensuite, nous posons un coefficient $k$ de proportion qui est le rapport entre ce qui est recyclé et ce qui sort du réacteur. On peut faire l'hypothèse que la purge enlève une proportion égale de moles pour chaque composé. Cela signifie que le rapport $k$ est le même pour les 3 composés. Nous l'avions choisi : $k \in [0 \text{(ouvert)}, 1 \text{(fermé)}[$
+Enfin, l adernière chose importante à  faire est de s'assurer qu'il n'y ait pas d'accumulation d'argon dans le réacteur ce qui entrainerait une baisse de rendement. Il faut donc que en régime, l'argon rentrant soit égal à l'argon purgé. On a alors : 
+$\ce{Ar_{syn}} = \ce{Ar_{in}+Ar_{rec}}$. 
+Finalement, si l'on veut pouvoir exprimer les entrées en fonction du rapport de purge, de la pression, la température et le débit d'ammoniac sortant on doit se mettre dans la condition idéale ou les débits sont parfaitement conformes aux coefficients stœchiométriques
+ 
 
 \subsection{Points principaux de production et de consommation d'énergie du procédé}
 Le réformeur primaire est le plus gros consommateur d'énergie, c'est d'ailleurs
